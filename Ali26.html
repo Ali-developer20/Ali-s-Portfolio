@@ -3,11 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
     <link rel="stylesheet" href="Ali26.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hello Ali</h1>  
-    <h6>Hello GitHub</h6>
+
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="My Logo" class="nav-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">Ali Developer</span>.</h1>
+                <p>A passionate developer crafting beautiful and functional web experiences.</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I specialize in building high-quality websites and applications. With a focus on clean code and user-centered design.</p>
+    </section>
+
+    <section id="skills" class="container">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-info"><span>HTML & CSS</span><span>95%</span></div>
+                <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>JavaScript</span><span>85%</span></div>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Recent Projects</h2>
+        <div class="project-grid">
+            <div class="project-card"><h3>Project One</h3><p>Description here...</p></div>
+            <div class="project-card"><h3>Project Two</h3><p>Description here...</p></div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <p>Email: <a href="mailto:dev.aliimad@email.com">dev.aliimad@email.com</a></p>
+        <div class="socials">
+            <a href="https://www.instagram.com/kurdish_programming" target="_blank"  target="_blank">Instagram</a></a> | <a href="https://github.com/Ali-developer20" target="_blank"">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        // Check for saved user preference
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+            btn.textContent = "☀️";
+        }
+
+        btn.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            let theme = "light";
+            
+            if (body.classList.contains("dark-mode")) {
+                theme = "dark";
+                btn.textContent = "☀️";
+            } else {
+                btn.textContent = "🌙";
+            }
+            localStorage.setItem("theme", theme);
+        });
+    </script>
 </body>
-</html>   
+</html>
