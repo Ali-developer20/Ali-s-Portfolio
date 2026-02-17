@@ -1,4 +1,4 @@
-:root {
+ :root {
     --primary: #2563eb; 
     --bg: #ffffff;
     --nav-bg: #ffffff;
@@ -60,7 +60,7 @@ nav {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 5px solid var(--primary);
+    border: 3px solid var(--primary);
     object-fit: cover;
 }
 
@@ -98,4 +98,4 @@ footer a { color: var(--primary); }
 When the screen is smaller than 768px, I changed the flex-direction to
 column-reverse. This stacks the elements vertically for better readability
 and ensures the profile image appears above the text on mobile devices, providing
-a better user experience."
+a better user experience." */
